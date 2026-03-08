@@ -71,3 +71,5 @@ coverage/
 # ----- Misc -----
 *.zip
 *.tar.gz
+
+SETUP-TULCE-TRACKER.ps1
