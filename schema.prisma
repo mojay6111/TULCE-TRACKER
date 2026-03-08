@@ -1,0 +1,53 @@
+// This is your Prisma schema file for TULCE TRACKER
+// Database: PostgreSQL (local)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Customer {
+  id        Int      @id @default(autoincrement())
+  name      String
+  phone     String?
+  createdAt DateTime @default(now())
+  orders    Order[]
+}
+
+model Order {
+  id          Int           @id @default(autoincrement())
+  customerId  Int
+  customer    Customer      @relation(fields: [customerId], references: [id])
+  quantity    Int           // number of tulces
+  unitPrice   Float         @default(5.0) // KES 5 each
+  totalAmount Float         // quantity * unitPrice
+  date        DateTime      @default(now())
+  dayLabel    String        // e.g. "2024-01-15" for grouping
+  payments    Payment[]
+  createdAt   DateTime      @default(now())
+}
+
+model Payment {
+  id        Int           @id @default(autoincrement())
+  orderId   Int
+  order     Order         @relation(fields: [orderId], references: [id])
+  amount    Float
+  method    PaymentMethod
+  paidAt    DateTime      @default(now())
+}
+
+enum PaymentMethod {
+  CASH
+  MPESA
+}
