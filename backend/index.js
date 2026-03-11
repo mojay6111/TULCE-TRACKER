@@ -11,7 +11,7 @@ const mpesaRoutes = require("./routes/mpesa");
 
 const app = express();
 
-app.use(cors({ origin: ["http://localhost:5173", /\.ngrok-free\.app$/] }));
+app.use(cors({ origin: ["http://localhost:5174", /\.ngrok-free\.app$/] }));
 app.use(express.json());
 
 // Routes
@@ -27,7 +27,7 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "TULCE TRACKER is running 🍩" });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`\n🍩 TULCE TRACKER backend running on http://localhost:${PORT}`);
   console.log(

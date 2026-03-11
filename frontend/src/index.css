@@ -1,16 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* { box-sizing: border-box; }
-body { font-family: "DM Sans", sans-serif; background-color: #0f0e0d; color: #f5f0eb; margin: 0; }
-h1,h2,h3,h4 { font-family: "Syne", sans-serif; }
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #1a1816; }
-::-webkit-scrollbar-thumb { background: #3d3936; border-radius: 3px; }
-.badge-paid { @apply bg-emerald-900/50 text-emerald-400 border border-emerald-800; }
-.badge-unpaid { @apply bg-red-900/50 text-red-400 border border-red-800; }
-.badge-partial { @apply bg-amber-900/50 text-amber-400 border border-amber-800; }
-@keyframes slideUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
-.animate-slide-up { animation: slideUp 0.35s ease forwards; }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-.animate-fade-in { animation: fadeIn 0.4s ease forwards; }
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #0f0e0d;
+  color: #f5f0eb;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Syne", sans-serif;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1816;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d3936;
+  border-radius: 3px;
+}
+.badge-paid {
+  @apply bg-emerald-900/50 text-emerald-400 border border-emerald-800;
+}
+.badge-unpaid {
+  @apply bg-red-900/50 text-red-400 border border-red-800;
+}
+.badge-partial {
+  @apply bg-amber-900/50 text-amber-400 border border-amber-800;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slideUp 0.35s ease forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
